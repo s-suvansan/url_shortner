@@ -55,9 +55,10 @@ app.post("/shorten", async (req, res) => {
 
 app.get("/dynamic-page", (req, res) => {
   // Dynamic data for OG tags
-  const pageTitle = "Dynamic Page Title";
-  const pageDescription = "This is a dynamically generated page description.";
-  const pageImageURL = "https://example.com/dynamic-image.jpg";
+  const pageTitle = "Allium";
+  const pageDescription = "Allium, Flowers, Plant image. Free for use.";
+  const pageImageURL =
+    "https://cdn.pixabay.com/photo/2023/07/05/13/34/allium-8108318_1280.jpg";
 
   // Generate the HTML with dynamic OG tags
   const html = `
