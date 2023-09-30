@@ -63,7 +63,7 @@ app.get("/dynamic-page", (req, res) => {
   // Generate the HTML with dynamic OG tags
   const html = `
     <!DOCTYPE html>
-    <html>
+    <html prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="UTF-8">
         <title>${pageTitle}</title>
@@ -73,10 +73,6 @@ app.get("/dynamic-page", (req, res) => {
         <meta property="og:title" content="${pageTitle}">
         <meta property="og:description" content="${pageDescription}">
         <meta property="og:image" content="${pageImageURL}">
-        <meta property="og:url" content="${req.protocol}://${req.get("host")}${
-    req.originalUrl
-  }">
-        
     </head>
     <body>
         Short Link Started.....
@@ -110,3 +106,6 @@ app.get("/dynamic-page", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+// <!--  <meta property="og:url" content="${req.protocol}://${req.get("host")}${req.originalUrl}"> -->
+//
