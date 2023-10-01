@@ -48,12 +48,12 @@ app.post("/shorten", async (req, res) => {
 
   const existingUrl = await Url.findOne({ longUrl });
   if (existingUrl) {
-    const shortUrl = `https://short-link-py7b.onrender.com/${existingUrl.shortCode}`;
+    const shortUrl = `https://super-link.onrender.com/${existingUrl.shortCode}`;
     return res.status(200).json({ shortUrl });
   }
 
   const shortCode = shortid.generate();
-  const shortUrl = `https://short-link-py7b.onrender.com/${shortCode}`;
+  const shortUrl = `https://super-link.onrender.com/${shortCode}`;
 
   const url = new Url({ longUrl, shortCode, title, desc, image });
   await url.save();
